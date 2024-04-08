@@ -6899,6 +6899,12 @@ serverTestProc *getTestProcByName(const char *name) {
 #endif
 
 int main(int argc, char **argv) {
+#ifdef USE_OPENSSL
+    printf("====> USE_OPENSSL is defined\n");
+    printf("====> USE_OPENSSL=%d\n", USE_OPENSSL);
+#else
+    printf("====> USE_OPENSSL is not defined\n");
+#endif
     struct timeval tv;
     int j;
     char config_from_stdin = 0;
